@@ -7,7 +7,6 @@ namespace OfficeMap.Models
     {
         public Desk()
         {
-            Employee = new HashSet<Employee>();
         }
 
         public int Id { get; set; }
@@ -15,6 +14,6 @@ namespace OfficeMap.Models
         public int XCoordinate { get; set; }
         public int YCoordinate { get; set; }
 
-        public virtual ICollection<Employee> Employee { get; set; }
+        public virtual Employee Employee { get; set; }
     }
 }
