@@ -6,9 +6,17 @@
     <e p="C:\Users\Дима\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\Дима\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_OfficeMap.-1044772996.00" t="ExcludeRecursive" />
     <e p="D:\OfficeMap\OfficeMap" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="Models" t="Include">
+        <e p="Desk.cs" t="Include" />
+        <e p="Employee.cs" t="Include" />
+        <e p="OfficeMapDbContext.cs" t="Include" />
+        <e p="Photo.cs" t="Include" />
+        <e p="Position.cs" t="Include" />
+      </e>
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp3.1" t="Include">
