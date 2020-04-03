@@ -20,18 +20,6 @@ namespace OfficeMap.Models
         public virtual DbSet<Photo> Photos { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http: //go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder
-                    .UseLazyLoadingProxies()
-                    .UseNpgsql(
-                        "Host=ec2-54-246-89-234.eu-west-1.compute.amazonaws.com; Database=daskaovpl1pp2q; Username=eyaodbfswdycpk; Password=4167d3c88956cd3e75ace1fa757956478d84d4a7106541716ef7f8faad8d3fbc; sslmode=Require; Trust Server Certificate=true;");
-            }
-        }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Desk>(entity =>
