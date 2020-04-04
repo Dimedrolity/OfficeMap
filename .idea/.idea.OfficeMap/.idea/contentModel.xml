@@ -10,6 +10,9 @@
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
+      <e p="Controllers" t="Include">
+        <e p="EmployeesController.cs" t="Include" />
+      </e>
       <e p="Models" t="Include">
         <e p="Desk.cs" t="Include" />
         <e p="Employee.cs" t="Include" />

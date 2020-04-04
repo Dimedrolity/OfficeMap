@@ -7,11 +7,8 @@ namespace OfficeMap.Models
     {
         public Photo()
         {
-            Employee = new HashSet<Employee>();
         }
 
         public int Id { get; set; }
-
-        public virtual ICollection<Employee> Employee { get; set; }
     }
 }

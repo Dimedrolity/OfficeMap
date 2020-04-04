@@ -92,16 +92,18 @@ namespace OfficeMap.Models
                     .HasConstraintName("employee_desk_id_fkey");
 
                 entity.HasOne(d => d.Photo)
-                    .WithMany(p => p.Employee)
-                    .HasForeignKey(d => d.PhotoId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("employee_photo_id_fkey");
+                    // .WithMany(p => p.Employee)
+                    // .HasForeignKey(d => d.PhotoId)
+                    // .OnDelete(DeleteBehavior.ClientSetNull)
+                    // .HasConstraintName("employee_photo_id_fkey")
+                    ;
 
                 entity.HasOne(d => d.Position)
-                    .WithMany(p => p.Employee)
-                    .HasForeignKey(d => d.PositionId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("employee_position_id_fkey");
+                    // .WithMany(p => p.Employee)
+                    // .HasForeignKey(d => d.PositionId)
+                    // .OnDelete(DeleteBehavior.ClientSetNull)
+                    // .HasConstraintName("employee_position_id_fkey")
+                    ;
             });
 
             modelBuilder.Entity<Photo>(entity =>
