@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="utf-8"/>
+        
+    <meta name="viewport" content="width=device-width"/>
+    <title>Список сотрудников</title>
+</head>
+<body>
+
+<table>
+           
+    <thead>
+        <th>Фамилия</th>
+        <th>Должность</th>
+        <th>Этаж</th>
+    </thead>
+            
+    <tbody>
+
+    </tbody>
+        
+</table>
+  
+<script>
+    async function GetEmployees() {
+        const response = await fetch("/api/employees/Ив", {
+            method: "GET",
+            headers: {"Accept": "application/json"}
+        });
+     
+        if (response.ok === true) {
+            const employees = await response.json();
+            let rows = document.querySelector("tbody");
+            for (let emp of employees) {
+                rows.append(row(emp));
+            }
+        }
+    }
+    
+    // загрузка пользователей
+    GetEmployees();
+
+    // создание строки для таблицы
+    function row(emp) {
+
+        const tr = document.createElement("tr");
+
+        const nameTd = document.createElement("td");
+        nameTd.append(emp.lastName);
+        tr.append(nameTd);
+
+        const positionTd = document.createElement("td");
+        positionTd.append(emp.position.name);
+        tr.append(positionTd);
+
+        const floorTd = document.createElement("td");
+        floorTd.append(emp.desk.floorNumber);
+        tr.append(floorTd);
+
+        return tr;
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -16,30 +16,28 @@ namespace OfficeMap.Controllers
         {
             db = context;
         }
-        
-        [HttpGet]
-        public IEnumerable<Employee> GetAllEmployees()
+
+        [HttpGet("starts-with/{startOfName}")]
+        public IEnumerable<Employee> GetEmployeesBySubstring(string startOfName)
         {
-            return db.Employees
+            var employees = db.Employees
+                .Where(emp =>
+                    emp.LastName.ToLower().StartsWith(startOfName.ToLower()) ||
+                    emp.FirstName.ToLower().StartsWith(startOfName.ToLower()) ||
+                    emp.MiddleName.ToLower().StartsWith(startOfName.ToLower()));
+
+            return employees
                 .Include(emp => emp.Position)
                 .Include(emp => emp.Desk)
                 .Include(emp => emp.Photo)
                 .ToList();
         }
 
-        [HttpGet("{substring}")]
-        public IEnumerable<Employee> GetEmployeesBySubstring(string substring)
+        [HttpGet("by-desk-id/{deskId}")]
+        public IEnumerable<Employee> GetEmployeeByDeskId(int deskId)
         {
-            var employees = db.Employees
-                .Where(emp =>
-                    emp.LastName.Contains(substring) ||
-                    emp.FirstName.Contains(substring) ||
-                    emp.MiddleName.Contains(substring));
-
-            return employees
-                .Include(emp => emp.Position)
-                .Include(emp => emp.Desk)
-                .Include(emp => emp.Photo)
+            return db.Employees
+                .Where(emp => emp.DeskId == deskId)
                 .ToList();
         }
     }

@@ -11,6 +11,7 @@
       <e p="appsettings.json" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Controllers" t="Include">
+        <e p="DesksController.cs" t="Include" />
         <e p="EmployeesController.cs" t="Include" />
       </e>
       <e p="Models" t="Include">
@@ -35,6 +36,9 @@
         <e p="launchSettings.json" t="Include" />
       </e>
       <e p="Startup.cs" t="Include" />
+      <e p="wwwroot" t="Include">
+        <e p="example.html" t="Include" />
+      </e>
     </e>
   </component>
 </project>
