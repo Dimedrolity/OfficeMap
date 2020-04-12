@@ -18,11 +18,10 @@ namespace OfficeMap.Controllers
         }
 
         [HttpGet("on-floor/{floorNumber}")]
-        public IEnumerable<Employee> GetDesksByFloorNumber(int floorNumber)
+        public IEnumerable<Desk> GetDesksByFloorNumber(int floorNumber)
         {
-            return db.Employees
-                .Include(emp => emp.Desk)
-                .Where(emp => emp.Desk.FloorNumber == floorNumber)
+            return db.Desks
+                .Where(desk => desk.FloorNumber == floorNumber)
                 .ToList();
         }
     }
