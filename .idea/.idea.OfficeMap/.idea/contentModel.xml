@@ -38,6 +38,9 @@
       <e p="Startup.cs" t="Include" />
       <e p="wwwroot" t="Include">
         <e p="example.html" t="Include" />
+        <e p="photos" t="Include">
+          <e p="1.png" t="Include" />
+        </e>
       </e>
     </e>
   </component>

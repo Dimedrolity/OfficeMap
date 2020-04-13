@@ -11,9 +11,12 @@
 <table>
            
     <thead>
+    <tr>
         <th>Фамилия</th>
         <th>Должность</th>
         <th>Этаж</th>
+    </tr>
+
     </thead>
             
     <tbody>
@@ -21,14 +24,15 @@
     </tbody>
         
 </table>
+<img src="./photos/1.png" alt="g">
   
 <script>
     async function GetEmployees() {
-        const response = await fetch("/api/employees/Ив", {
+        const response = await fetch("/api/employees/starts-with/Ив", {
             method: "GET",
             headers: {"Accept": "application/json"}
         });
-     
+
         if (response.ok === true) {
             const employees = await response.json();
             let rows = document.querySelector("tbody");
@@ -37,7 +41,7 @@
             }
         }
     }
-    
+
     // загрузка пользователей
     GetEmployees();
 
