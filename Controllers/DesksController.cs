@@ -22,6 +22,7 @@ namespace OfficeMap.Controllers
         {
             return db.Desks
                 .Where(desk => desk.FloorNumber == floorNumber)
+                .Include(desk=> desk.Employee)
                 .ToList();
         }
     }
