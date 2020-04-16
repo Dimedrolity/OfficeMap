@@ -38,6 +38,7 @@ namespace OfficeMap.Controllers
         {
             return db.Employees
                 .Where(emp => emp.DeskId == deskId)
+                .Include(emp => emp.Desk)
                 .Include(emp => emp.Position)
                 .Include(emp => emp.Photo)
                 .ToList();
