@@ -9,6 +9,8 @@ namespace OfficeMap.Models
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public string LastName { get; set; }
+        public string Team { get; set; }
+        public string Direction { get; set; }
         public string EmailAddress { get; set; }
         public string PhoneNumber { get; set; }
         public int PositionId { get; set; }

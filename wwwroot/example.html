@@ -28,7 +28,7 @@
   
 <script>
     async function GetEmployees() {
-        const response = await fetch("/api/employees/starts-with/Ив", {
+        const response = await fetch("https://offficemap.azurewebsites.net/api/employees/starts-with/Ив", {
             method: "GET",
             headers: {"Accept": "application/json"}
         });

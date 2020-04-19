@@ -75,6 +75,16 @@ namespace OfficeMap.Models
                     .HasColumnName("middle_name")
                     .HasMaxLength(255);
 
+                entity.Property(e => e.Team)
+                    .IsRequired()
+                    .HasColumnName("team")
+                    .HasMaxLength(255);
+                
+                entity.Property(e => e.Direction)
+                    .IsRequired()
+                    .HasColumnName("direction")
+                    .HasMaxLength(255);
+                
                 entity.Property(e => e.PhoneNumber)
                     .IsRequired()
                     .HasColumnName("phone_number")
@@ -98,12 +108,7 @@ namespace OfficeMap.Models
                     // .HasConstraintName("employee_photo_id_fkey")
                     ;
 
-                entity.HasOne(d => d.Position)
-                    // .WithMany(p => p.Employee)
-                    // .HasForeignKey(d => d.PositionId)
-                    // .OnDelete(DeleteBehavior.ClientSetNull)
-                    // .HasConstraintName("employee_position_id_fkey")
-                    ;
+                entity.HasOne(d => d.Position);
             });
 
             modelBuilder.Entity<Photo>(entity =>
