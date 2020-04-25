@@ -23,8 +23,7 @@ namespace OfficeMap.Controllers
             var employees = db.Employees
                 .Where(emp =>
                     emp.LastName.ToLower().StartsWith(startOfName.ToLower()) ||
-                    emp.FirstName.ToLower().StartsWith(startOfName.ToLower()) ||
-                    emp.MiddleName.ToLower().StartsWith(startOfName.ToLower()));
+                    emp.FirstName.ToLower().StartsWith(startOfName.ToLower()));
 
             return employees
                 .Include(emp => emp.Position)

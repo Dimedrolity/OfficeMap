@@ -40,6 +40,8 @@
         <e p="example.html" t="Include" />
         <e p="photos" t="Include">
           <e p="1.png" t="Include" />
+          <e p="2.png" t="Include" />
+          <e p="3.png" t="Include" />
         </e>
       </e>
     </e>
