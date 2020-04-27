@@ -98,7 +98,7 @@ namespace OfficeMap.Models
 
                 entity.HasOne(emp => emp.Desk)
                     .WithOne(desk => desk.Employee)
-                    .HasForeignKey<Desk>(desk => desk.Id)
+                    .HasForeignKey<Employee>(emp => emp.DeskId)
                     .HasConstraintName("employee_desk_id_fkey");
 
                 entity.HasOne(d => d.Photo)
