@@ -15,4 +15,10 @@
     <ItemGroup>
         <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.3" />
     </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\photos\1.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\photos\2.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\photos\3.png" />
+    </ItemGroup>
 </Project>

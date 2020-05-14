@@ -24,7 +24,7 @@ namespace OfficeMap
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                     options.SerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
                 });
-            ;
+            
 
             services.AddCors();
         }
@@ -36,7 +36,7 @@ namespace OfficeMap
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            
             app.UseCors(builder => builder.AllowAnyOrigin());
             
             app.UseEndpoints(endpoints =>

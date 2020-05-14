@@ -37,11 +37,107 @@
       </e>
       <e p="Startup.cs" t="Include" />
       <e p="wwwroot" t="Include">
-        <e p="example.html" t="Include" />
+        <e p="css" t="Include">
+          <e p="style.css" t="Include" />
+        </e>
+        <e p="images" t="Include">
+          <e p="br-horiz.svg" t="Include" />
+          <e p="clear.svg" t="Include" />
+          <e p="cross.svg" t="Include" />
+          <e p="floor.svg" t="Include" />
+          <e p="full.svg" t="Include" />
+          <e p="minus.svg" t="Include" />
+          <e p="plus.svg" t="Include" />
+          <e p="sad.png" t="Include" />
+          <e p="scale.svg" t="Include" />
+          <e p="search.svg" t="Include" />
+          <e p="searchicon.svg" t="Include" />
+          <e p="tables.svg" t="Include" />
+          <e p="ава.png" t="Include" />
+        </e>
+        <e p="index.html" t="Include" />
+        <e p="js" t="Include">
+          <e p="allCards.js" t="Include" />
+          <e p="cardOfResults.js" t="Include" />
+          <e p="clickOnDesk.js" t="Include" />
+          <e p="desks.js" t="Include" />
+          <e p="dragAndDropOfMap.js" t="Include" />
+          <e p="employeeCard.js" t="Include" />
+          <e p="floorSwitching.js" t="Include" />
+          <e p="hideAndShowButton.js" t="Include" />
+          <e p="searchAndClear.js" t="Include" />
+          <e p="zoom.js" t="Include" />
+        </e>
+        <e p="lib" t="Include">
+          <e p="fonts" t="Include">
+            <e p="font-awesome" t="Include">
+              <e p="css" t="Include">
+                <e p="all.min.css" t="Include" />
+                <e p="font-awesome.css" t="Include" />
+                <e p="font-awesome.min.css" t="Include" />
+              </e>
+              <e p="fonts" t="Include">
+                <e p="fontawesome-webfont.eot" t="Include" />
+                <e p="fontawesome-webfont.svg" t="Include" />
+                <e p="fontawesome-webfont.ttf" t="Include" />
+                <e p="fontawesome-webfont.woff" t="Include" />
+                <e p="fontawesome-webfont.woff2" t="Include" />
+                <e p="FontAwesome.otf" t="Include" />
+              </e>
+            </e>
+            <e p="GothamPro" t="Include">
+              <e p="GothamPro-Black.eot" t="Include" />
+              <e p="GothamPro-Black.otf" t="Include" />
+              <e p="GothamPro-Black.svg" t="Include" />
+              <e p="GothamPro-Black.ttf" t="Include" />
+              <e p="GothamPro-Black.woff" t="Include" />
+              <e p="GothamPro-Bold.eot" t="Include" />
+              <e p="GothamPro-Bold.otf" t="Include" />
+              <e p="GothamPro-Bold.svg" t="Include" />
+              <e p="GothamPro-Bold.ttf" t="Include" />
+              <e p="GothamPro-Bold.woff" t="Include" />
+              <e p="GothamPro.eot" t="Include" />
+              <e p="GothamPro.otf" t="Include" />
+              <e p="GothamPro.svg" t="Include" />
+              <e p="GothamPro.ttf" t="Include" />
+              <e p="GothamPro.woff" t="Include" />
+              <e p="preview.html" t="Include" />
+              <e p="styles.css" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="photos" t="Include">
           <e p="1.png" t="Include" />
+          <e p="10.png" t="Include" />
+          <e p="11.png" t="Include" />
+          <e p="12.png" t="Include" />
+          <e p="13.png" t="Include" />
+          <e p="14.png" t="Include" />
+          <e p="15.png" t="Include" />
+          <e p="16.png" t="Include" />
+          <e p="17.png" t="Include" />
+          <e p="18.png" t="Include" />
+          <e p="19.png" t="Include" />
           <e p="2.png" t="Include" />
+          <e p="20.png" t="Include" />
+          <e p="21.png" t="Include" />
+          <e p="22.png" t="Include" />
+          <e p="23.png" t="Include" />
+          <e p="24.png" t="Include" />
+          <e p="25.png" t="Include" />
+          <e p="26.png" t="Include" />
+          <e p="27.png" t="Include" />
+          <e p="28.png" t="Include" />
+          <e p="29.png" t="Include" />
           <e p="3.png" t="Include" />
+          <e p="30.png" t="Include" />
+          <e p="31.png" t="Include" />
+          <e p="4.png" t="Include" />
+          <e p="5.png" t="Include" />
+          <e p="6.png" t="Include" />
+          <e p="7.png" t="Include" />
+          <e p="8.png" t="Include" />
+          <e p="9.png" t="Include" />
         </e>
       </e>
     </e>
