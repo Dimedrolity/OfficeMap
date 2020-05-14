@@ -18,6 +18,7 @@
         <e p="Desk.cs" t="Include" />
         <e p="Employee.cs" t="Include" />
         <e p="OfficeMapDbContext.cs" t="Include" />
+        <e p="Password.cs" t="Include" />
         <e p="Photo.cs" t="Include" />
         <e p="Position.cs" t="Include" />
       </e>

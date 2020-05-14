@@ -29,6 +29,7 @@ namespace OfficeMap.Controllers
                 .Include(emp => emp.Position)
                 .Include(emp => emp.Desk)
                 .Include(emp => emp.Photo)
+                .Include(emp => emp.Password)
                 .ToList();
         }
 

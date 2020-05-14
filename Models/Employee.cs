@@ -16,9 +16,11 @@ namespace OfficeMap.Models
         public int PositionId { get; set; }
         public int PhotoId { get; set; }
         public int? DeskId { get; set; }
+        public int? PasswordId { get; set; }
 
         public virtual Desk Desk { get; set; }
         public virtual Photo Photo { get; set; }
         public virtual Position Position { get; set; }
+        public virtual Password Password { get; set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace OfficeMap.Models
 {
@@ -19,6 +17,7 @@ namespace OfficeMap.Models
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<Photo> Photos { get; set; }
         public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<Password> Passwords { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -54,6 +53,12 @@ namespace OfficeMap.Models
                 entity.Property(e => e.Id).HasColumnName("employee_id");
 
                 entity.Property(e => e.DeskId).HasColumnName("desk_id");
+                
+                entity.Property(e => e.PositionId).HasColumnName("position_id");
+                entity.HasOne(emp => emp.Position);
+                
+                entity.Property(e => e.PasswordId).HasColumnName("password_id");
+                entity.HasOne(emp => emp.Password);
 
                 entity.Property(e => e.EmailAddress)
                     .IsRequired()
@@ -94,21 +99,19 @@ namespace OfficeMap.Models
                     .HasColumnName("photo_id")
                     .HasDefaultValueSql("1");
 
-                entity.Property(e => e.PositionId).HasColumnName("position_id");
+     
 
                 entity.HasOne(emp => emp.Desk)
                     .WithOne(desk => desk.Employee)
                     .HasForeignKey<Employee>(emp => emp.DeskId)
                     .HasConstraintName("employee_desk_id_fkey");
 
-                entity.HasOne(d => d.Photo)
+                entity.HasOne(emp => emp.Photo)
                     // .WithMany(p => p.Employee)
                     // .HasForeignKey(d => d.PhotoId)
                     // .OnDelete(DeleteBehavior.ClientSetNull)
                     // .HasConstraintName("employee_photo_id_fkey")
                     ;
-
-                entity.HasOne(d => d.Position);
             });
 
             modelBuilder.Entity<Photo>(entity =>
@@ -132,6 +135,17 @@ namespace OfficeMap.Models
                     .IsRequired()
                     .HasColumnName("position_name")
                     .HasMaxLength(255);
+            });
+            
+            modelBuilder.Entity<Password>(entity =>
+            {
+                entity.ToTable("password");
+                
+                entity.Property(p => p.Id).HasColumnName("password_id");
+
+                entity.Property(p => p.HashValue)
+                    .HasColumnName("hash_value")
+                    .HasMaxLength(64);
             });
 
             OnModelCreatingPartial(modelBuilder);
