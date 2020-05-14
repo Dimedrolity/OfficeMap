@@ -10,17 +10,17 @@ namespace OfficeMap.Controllers
     [Route("api/[controller]")]
     public class EmployeesController : ControllerBase
     {
-        OfficeMapDbContext db;
+        private readonly OfficeMapDbContext _db;
 
         public EmployeesController(OfficeMapDbContext context)
         {
-            db = context;
+            _db = context;
         }
 
         [HttpGet("starts-with/{startOfName}")]
         public IEnumerable<Employee> GetEmployeesBySubstring(string startOfName)
         {
-            var employees = db.Employees
+            var employees = _db.Employees
                 .Where(emp =>
                     emp.LastName.ToLower().StartsWith(startOfName.ToLower()) ||
                     emp.FirstName.ToLower().StartsWith(startOfName.ToLower()));
@@ -29,14 +29,13 @@ namespace OfficeMap.Controllers
                 .Include(emp => emp.Position)
                 .Include(emp => emp.Desk)
                 .Include(emp => emp.Photo)
-                .Include(emp => emp.Password)
                 .ToList();
         }
 
         [HttpGet("by-desk-id/{deskId}")]
         public IEnumerable<Employee> GetEmployeeByDeskId(int deskId)
         {
-            return db.Employees
+            return _db.Employees
                 .Where(emp => emp.DeskId == deskId)
                 .Include(emp => emp.Desk)
                 .Include(emp => emp.Position)

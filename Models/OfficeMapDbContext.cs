@@ -53,10 +53,10 @@ namespace OfficeMap.Models
                 entity.Property(e => e.Id).HasColumnName("employee_id");
 
                 entity.Property(e => e.DeskId).HasColumnName("desk_id");
-                
+
                 entity.Property(e => e.PositionId).HasColumnName("position_id");
                 entity.HasOne(emp => emp.Position);
-                
+
                 entity.Property(e => e.PasswordId).HasColumnName("password_id");
                 entity.HasOne(emp => emp.Password);
 
@@ -84,12 +84,12 @@ namespace OfficeMap.Models
                     .IsRequired()
                     .HasColumnName("team")
                     .HasMaxLength(255);
-                
+
                 entity.Property(e => e.Direction)
                     .IsRequired()
                     .HasColumnName("direction")
                     .HasMaxLength(255);
-                
+
                 entity.Property(e => e.PhoneNumber)
                     .IsRequired()
                     .HasColumnName("phone_number")
@@ -99,7 +99,6 @@ namespace OfficeMap.Models
                     .HasColumnName("photo_id")
                     .HasDefaultValueSql("1");
 
-     
 
                 entity.HasOne(emp => emp.Desk)
                     .WithOne(desk => desk.Employee)
@@ -136,11 +135,11 @@ namespace OfficeMap.Models
                     .HasColumnName("position_name")
                     .HasMaxLength(255);
             });
-            
+
             modelBuilder.Entity<Password>(entity =>
             {
                 entity.ToTable("password");
-                
+
                 entity.Property(p => p.Id).HasColumnName("password_id");
 
                 entity.Property(p => p.HashValue)
