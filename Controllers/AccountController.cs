@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using OfficeMap.Models;
@@ -21,7 +22,7 @@ namespace OfficeMap.Controllers
             _db = context;
         }
         
-        [HttpPost("/token")]
+        [HttpPost("token")]
         public async Task Token()
         {
             var login = Request.Form["login"];
@@ -62,7 +63,8 @@ namespace OfficeMap.Controllers
         
         private Employee GetEmployeeByEmail(string email)
         {
-            var employees = _db.Employees;
+            var employees = _db.Employees
+                .Include(emp => emp.Password);
             return employees.FirstOrDefault(emp => emp.EmailAddress == email);
         }
     }
