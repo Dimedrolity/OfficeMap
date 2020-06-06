@@ -37,11 +37,14 @@ namespace OfficeMap
 
             app.UseRouting();
             
+            //works
+            //app.UseCors(builder => builder.WithOrigins("http://localhost:63342").AllowAnyHeader());
+            
+            //works for all
             app.UseCors(builder => builder.AllowAnyOrigin());
             
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context => { await context.Response.WriteAsync("Hello World!"); });
                 endpoints.MapControllers(); // подключаем маршрутизацию на контроллеры
             });
         }

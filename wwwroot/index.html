@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Карта офиса</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="css/styleLogin.css" rel="stylesheet">
+    <link href="lib/fonts/GothamPro/styles.css" rel="stylesheet">
+</head>
+<body>
+
+<section class="login-wrapper">
+    <div class="form-wrapper">
+        <form class="login-form">
+            <span class="welcome-title">Добро<br/>пожаловать</span>
+
+            <span class="invalid-fields invalid-title">Не удаётся войти</span>
+            <span class="invalid-fields invalid-subtitle">Пожалуйста, проверьте правильность<br>написания логина и пароля.</span>
+
+            <span class="welcome-subtitle">Войдите в систему для использования карты</span>
+
+            <div class="wrap-input">
+                <div class="name-input">
+                    <input id="login-input" type="text" name="username" placeholder="Логин">
+                </div>
+                <div class="pass-input">
+                    <input type="password" id="password-input" name="password" placeholder="Пароль">
+                    <a href="#" class="password-control"></a>
+                </div>
+            </div>
+
+            <div class="btn-wrapper">
+                <button id="submit-login" type="submit" class="login-btn">Войти</button>
+            </div>
+        </form>
+    </div>
+    <div class="proto-map">
+        <img src="images/pictureMap.svg" alt="За стеклом">
+    </div>
+</section>
+
+<script type="text/javascript">
+    const view = document.querySelector('.password-control');
+    const pasInput = document.getElementById('password-input');
+
+    view.addEventListener('click', () => {
+        if (pasInput.getAttribute('type') === 'password') {
+            view.classList.add('view');
+            pasInput.setAttribute('type', 'text');
+        } else {
+            view.classList.remove('view');
+            pasInput.setAttribute('type', 'password');
+        }
+        return false;
+    });
+
+</script>
+<script src="js/authenticate.js" type="module"></script>
+<script src="js/sha256.js" type="module"></script>
+
+</body>

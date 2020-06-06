@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using OfficeMap.Models;
@@ -16,7 +18,7 @@ namespace OfficeMap.Controllers
         {
             _db = context;
         }
-
+        
         [HttpGet("starts-with/{startOfName}")]
         public IEnumerable<Employee> GetEmployeesBySubstring(string startOfName)
         {
@@ -31,7 +33,7 @@ namespace OfficeMap.Controllers
                 .Include(emp => emp.Photo)
                 .ToList();
         }
-
+        
         [HttpGet("by-desk-id/{deskId}")]
         public IEnumerable<Employee> GetEmployeeByDeskId(int deskId)
         {

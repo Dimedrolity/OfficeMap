@@ -22,7 +22,7 @@ namespace OfficeMap.Controllers
             _db = context;
         }
         
-        [HttpPost("token")]
+        [HttpPost("get-token")]
         public async Task Token()
         {
             var login = Request.Form["login"];
